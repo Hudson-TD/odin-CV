@@ -1,1 +1,12 @@
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
 
+.user-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+}
