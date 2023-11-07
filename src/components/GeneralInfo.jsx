@@ -24,7 +24,7 @@ function GeneralInfo() {
 
   if (activeStatus === true) {
     return (
-      <>
+      <div className="data-container-active">
         <h1>General Information</h1>
         <div className="info-container-active">
           <div className="user-input-container">
@@ -77,13 +77,13 @@ function GeneralInfo() {
           </div>
           <button onClick={handleEditToggle}>Save</button>
         </div>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="data-container-inactive">
         <h1 className="heading-button" onClick={handleEditToggle}>
-          General Information +
+          Add General Information +
         </h1>
         <div className="info-container-inactive">
           <p>
@@ -92,7 +92,7 @@ function GeneralInfo() {
           <p>{generalInfo.email}</p>
           <p>{generalInfo.phone}</p>
         </div>
-      </>
+      </div>
     );
   }
 }

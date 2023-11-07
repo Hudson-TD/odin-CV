@@ -24,7 +24,7 @@ function EducationInfo() {
 
   if (activeStatus === true) {
     return (
-      <>
+      <div className="data-container-active">
         <h1>Education Information</h1>
         <div className="info-container-active">
           <div className="user-input-container">
@@ -81,13 +81,13 @@ function EducationInfo() {
           </div>
           <button onClick={handleEditToggle}>Save</button>
         </div>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="data-container-inactive">
         <h1 className="heading-button" onClick={handleEditToggle}>
-          Education Information +
+          Add Education +
         </h1>
         <div className="info-container-inactive">
           <p>{generalInfo.schoolName}</p>
@@ -95,7 +95,7 @@ function EducationInfo() {
           <p>{generalInfo.startDate}</p>
           <p>{generalInfo.graduationDate}</p>
         </div>
-      </>
+      </div>
     );
   }
 }
