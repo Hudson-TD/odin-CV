@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function GeneralInfo() {
+function EducationInfo() {
   const [generalInfo, setGeneralInfo] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
+    schoolName: "",
+    educationLevel: "",
+    startDate: "",
+    graduationDate: "",
   });
 
   const [activeStatus, setActiveStatus] = useState(true);
@@ -25,53 +25,57 @@ function GeneralInfo() {
   if (activeStatus === true) {
     return (
       <>
-        <h1>General Information</h1>
+        <h1>Education Information</h1>
         <div className="info-container-active">
           <div className="user-input-container">
-            <label className="info-label">First Name:</label>
+            <label className="info-label">Institute Name:</label>
             <input
               className="user-input"
-              name="firstName"
+              name="schoolName"
               type="text"
               required
-              placeholder="John"
-              value={generalInfo.firstName}
+              placeholder="University of Michigan"
+              value={generalInfo.schoolName}
               onChange={handleChange}
             />
           </div>
           <div className="user-input-container">
-            <label className="info-label">Last Name:</label>
-            <input
+            <label className="info-label">Education Level:</label>
+            <select
               className="user-input"
-              name="lastName"
+              name="educationLevel"
               type="text"
               required
-              placeholder="Doe"
-              value={generalInfo.lastName}
+              placeholder="Bachelors"
+              value={generalInfo.educationLevel}
+              onChange={handleChange}
+            >
+              <option value="High School Diploma">High School Diploma</option>
+              <option value="Associate's">Associate&#39;s</option>
+              <option value="Bachelor's">Bachelor&#39;s</option>
+              <option value="Master's'">Master&#39;s</option>
+              <option value="Doctorate">Doctorate</option>
+            </select>
+          </div>
+          <div className="user-input-container">
+            <label className="info-label">Start Date:</label>
+            <input
+              className="user-input"
+              name="startDate"
+              type="date"
+              required
+              value={generalInfo.startDate}
               onChange={handleChange}
             />
           </div>
           <div className="user-input-container">
-            <label className="info-label">Email Address:</label>
+            <label className="info-label">Graduation Date:</label>
             <input
               className="user-input"
-              name="email"
-              type="email"
+              name="graduationDate"
+              type="date"
               required
-              placeholder="jdoe@gmail.com"
-              value={generalInfo.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="user-input-container">
-            <label className="info-label">Phone Number:</label>
-            <input
-              className="user-input"
-              name="phone"
-              type="phone"
-              required
-              placeholder="555-123-4567"
-              value={generalInfo.phone}
+              value={generalInfo.graduationDate}
               onChange={handleChange}
             />
           </div>
@@ -83,18 +87,17 @@ function GeneralInfo() {
     return (
       <>
         <h1 className="heading-button" onClick={handleEditToggle}>
-          General Information +
+          Education Information +
         </h1>
         <div className="info-container-inactive">
-          <p>
-            {generalInfo.firstName} {generalInfo.lastName}
-          </p>
-          <p>{generalInfo.email}</p>
-          <p>{generalInfo.phone}</p>
+          <p>{generalInfo.schoolName}</p>
+          <p> {generalInfo.educationLevel}</p>
+          <p>{generalInfo.startDate}</p>
+          <p>{generalInfo.graduationDate}</p>
         </div>
       </>
     );
   }
 }
 
-export default GeneralInfo;
+export default EducationInfo;
