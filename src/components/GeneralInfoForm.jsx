@@ -25,10 +25,8 @@ function GeneralInfo() {
   if (activeStatus === true) {
     return (
       <>
-        <h1>
-          General Information<button onClick={handleEditToggle}>Save</button>
-        </h1>
-        <div className="info-container">
+        <h1>General Information</h1>
+        <div className="info-container-active">
           <div className="user-input-container">
             <label className="info-label">First Name:</label>
             <input
@@ -77,20 +75,23 @@ function GeneralInfo() {
               onChange={handleChange}
             />
           </div>
+          <button onClick={handleEditToggle}>Save</button>
         </div>
       </>
     );
   } else {
     return (
       <>
-        <h1>
-          General Information <button onClick={handleEditToggle}>Edit</button>
+        <h1 className="heading-button" onClick={handleEditToggle}>
+          General Information +
         </h1>
-        <p>
-          {generalInfo.firstName} {generalInfo.lastName}
-        </p>
-        <p>{generalInfo.email}</p>
-        <p>{generalInfo.phone}</p>
+        <div className="info-container-inactive">
+          <p>
+            {generalInfo.firstName} {generalInfo.lastName}
+          </p>
+          <p>{generalInfo.email}</p>
+          <p>{generalInfo.phone}</p>
+        </div>
       </>
     );
   }

@@ -1,7 +1,24 @@
-.info-container {
+.heading-button {
+  border: 1px solid black;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.heading-button:hover {
+  background-color: rgb(241, 241, 190);
+}
+
+.info-container-active {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
+  max-width: 500px;
+}
+
+.info-container-inactive {
+  display: flex;
   max-width: 500px;
 }
 
