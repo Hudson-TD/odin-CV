@@ -1,12 +1,20 @@
-import EducationInfo from "./components/EducationInfo.jsx";
-import GeneralInfo from "./components/GeneralInfo.jsx";
+import { useState } from "react";
+import FormsList from "./components/FormsList";
+import Header from "./components/Header";
 
 function App() {
+  const [currentSection, setCurrentSection] = useState("General Information");
+
+  function handleSectionChange(e) {
+    let newSection = e.target.getAttribute("data-section");
+    setCurrentSection(newSection);
+  }
+
   return (
-    <>
-      <GeneralInfo />
-      <EducationInfo />
-    </>
+    <div>
+      <Header onChange={handleSectionChange} currentSection={currentSection} />
+      <FormsList activeForm={currentSection} />
+    </div>
   );
 }
 
