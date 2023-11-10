@@ -7,7 +7,7 @@ function GeneralForm({ formData, onChange }) {
         <div className="form-group">
           <label htmlFor="firstNameInput">First Name *</label>
           <input
-            type="email"
+            type="text"
             name="firstName"
             value={formData.firstName}
             className="form-control"
@@ -20,7 +20,7 @@ function GeneralForm({ formData, onChange }) {
         <div className="form-group">
           <label htmlFor="lastNameInput">Last Name *</label>
           <input
-            type="email"
+            type="text"
             name="lastName"
             value={formData.lastName}
             className="form-control"
@@ -34,7 +34,7 @@ function GeneralForm({ formData, onChange }) {
           <label htmlFor="emailInput">Email Address *</label>
           <input
             type="email"
-            name="lastName"
+            name="email"
             value={formData.email}
             className="form-control"
             id="emailInput"
@@ -46,8 +46,8 @@ function GeneralForm({ formData, onChange }) {
         <div className="form-group">
           <label htmlFor="phoneInput">Phone Number *</label>
           <input
-            type="email"
-            name="lastName"
+            type="phone"
+            name="phone"
             value={formData.phone}
             className="form-control"
             id="phoneInput"
