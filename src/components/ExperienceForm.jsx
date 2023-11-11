@@ -1,5 +1,3 @@
-import SectionControl from "./SectionControl";
-
 function ExperienceForm({ formData, onChange }) {
   return (
     <>
@@ -55,7 +53,6 @@ function ExperienceForm({ formData, onChange }) {
           />
         </div>
       </form>
-      <SectionControl />
     </>
   );
 }

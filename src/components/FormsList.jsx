@@ -3,8 +3,9 @@ import GeneralForm from "./GeneralForm";
 import EducationForm from "./EducationForm";
 import ExperienceForm from "./ExperienceForm";
 import TemplatedCV from "./TemplatedCV";
+import SectionControl from "./SectionControl";
 
-function FormsList({ activeForm }) {
+function FormsList({ activeForm, onSave }) {
   const [generalData, setGeneralData] = useState({
     firstName: "",
     lastName: "",
@@ -50,25 +51,28 @@ function FormsList({ activeForm }) {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center">
         <GeneralForm formData={generalData} onChange={handleGeneralChange} />
+        <SectionControl onSave={onSave} nextSection="Education" />
       </div>
     );
   } else if (activeForm === "Education") {
     return (
-      <>
+      <div className="d-flex flex-column justify-content-center align-items-center">
         <EducationForm
           formData={educationData}
           onChange={handleEducationChange}
         />
-      </>
+        <SectionControl onSave={onSave} nextSection="Work Experience" />
+      </div>
     );
   } else if (activeForm === "Work Experience") {
     return (
-      <>
+      <div className="d-flex flex-column justify-content-center align-items-center">
         <ExperienceForm
           formData={experienceData}
           onChange={handleExperienceChange}
         />
-      </>
+        <SectionControl onSave={onSave} nextSection="Review & Download" />
+      </div>
     );
   } else if (activeForm === "Review & Download") {
     return (

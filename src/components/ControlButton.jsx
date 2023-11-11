@@ -1,6 +1,11 @@
-function ControlButton({ children }) {
+function ControlButton({ children, onSave, nextSection }) {
   return (
-    <button type="button" className="btn btn-primary px-5">
+    <button
+      type="button"
+      data-next={nextSection}
+      className="btn btn-primary px-5"
+      onClick={onSave}
+    >
       {children}
     </button>
   );

@@ -1,5 +1,3 @@
-import SectionControl from "./SectionControl";
-
 function GeneralForm({ formData, onChange }) {
   return (
     <>
@@ -57,7 +55,6 @@ function GeneralForm({ formData, onChange }) {
           />
         </div>
       </form>
-      <SectionControl />
     </>
   );
 }

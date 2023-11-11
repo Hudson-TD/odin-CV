@@ -10,10 +10,15 @@ function App() {
     setCurrentSection(newSection);
   }
 
+  function handleSectionSave(e) {
+    let newSection = e.target.getAttribute("data-next");
+    setCurrentSection(newSection);
+  }
+
   return (
     <div>
       <Header onChange={handleSectionChange} currentSection={currentSection} />
-      <FormsList activeForm={currentSection} />
+      <FormsList onSave={handleSectionSave} activeForm={currentSection} />
     </div>
   );
 }
